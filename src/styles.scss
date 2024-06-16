@@ -1,1 +1,70 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    font-family: "Open Sans";
+}
+
+/* Switch (On / Off) */
+.form-switch {
+    .form-check-input[role="switch"] {
+        height: 18px;
+        width: 32px;
+        background-color: #ebedf0;
+        &:checked {
+            background-color: #009b72;
+            border-color: #009b72;
+        }
+    }
+}
+
+/* Checkbox */
+.form-check-input[type="checkbox"] {
+    border-color: #dfe2e6;
+    margin-top: 0.3em;
+    &:checked {
+        background-color: #0a0e1a;
+        border-color: #0a0e1a;
+    }
+}
+
+.form-check-label {
+    color: #354764;
+}
+
+/* Text Colors */
+.text-light {
+    color: #78828e !important;
+}
+
+.text-dark {
+    color: #0a0e1a;
+    font-weight: 600;
+}
+
+.text-semi-dark {
+    color: #6b788e;
+}
+
+.test-green {
+    color: #009b72;
+}
+
+/* Buttons */
+.btn-outline-primary {
+    height: 45px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #0080fc;
+    border-color: #0080fc;
+    padding: 12px 24px;
+    &:hover {
+        color: #ffffff;
+    }
+}
+
+/* Dropdown */
+.dropdown-toggle {
+    &::after {
+        display: none;
+    }
+}

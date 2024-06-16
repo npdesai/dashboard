@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid header px-0">
+        <a class="navbar-brand" href="#">
+            <img src="assets/images/logo.png" alt="logo" />
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse header_navigation" id="navbarCollapse">
+            <div class="d-flex me-auto search">
+                <div class="input-group">
+                    <input type="text" class="search_input" placeholder="Search" aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn search_icon" type="button"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <div class="nav-link nav-badge"><span class="notification"></span><i class="bi bi-bell"></i></div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link nav-badge">
+                        <i class="bi bi-chat-square-text"></i>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="vr"></div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="assets/images/user.png" alt="User" class="user-profile" />
+                        My Account
+                        <i class="bi bi-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
