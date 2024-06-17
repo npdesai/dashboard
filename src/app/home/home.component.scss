@@ -102,6 +102,7 @@
             }
             .blue {
                 background-color: #eaf5ff;
+                position: relative;
                 &_icon {
                     background-color: #dbeeff;
                     .bi {
@@ -110,9 +111,19 @@
                         }
                     }
                 }
+                &_bar {
+                    position: absolute;
+                    top: 21px;
+                    left: 0;
+                    height: 46px;
+                    width: 2px;
+                    background-color: #0080fc;
+                    box-shadow: 2px 0 4px 0 rgba(0, 128, 252, 0.8)
+                }
             }
             .purple {
                 background-color: #f3edff;
+                position: relative;
                 &_icon {
                     background-color: #e9deff;
                     .bi {
@@ -121,9 +132,19 @@
                         }
                     }
                 }
+                &_bar {
+                    position: absolute;
+                    top: 21px;
+                    left: 0;
+                    height: 46px;
+                    width: 2px;
+                    background-color: #7339f5;
+                    box-shadow: 2px 0 4px 0 rgba(115, 57, 245, 0.8)
+                }
             }
             .green {
                 background-color: #e8fff9;
+                position: relative;
                 &_icon {
                     background-color: #cefff2;
                     .bi {
@@ -132,9 +153,19 @@
                         }
                     }
                 }
+                &_bar {
+                    position: absolute;
+                    top: 21px;
+                    left: 0;
+                    height: 46px;
+                    width: 2px;
+                    background-color: #009b72;
+                    box-shadow: 2px 0 4px 0 rgba(0, 155, 114, 0.8)
+                }
             }
             .orange {
                 background-color: #fff6ec;
+                position: relative;
                 &_icon {
                     background-color: #ffebd3;
                     .bi {
@@ -142,6 +173,15 @@
                             color: #ff8a00;
                         }
                     }
+                }
+                &_bar {
+                    position: absolute;
+                    left: 0;
+                    top: 21px;
+                    height: 46px;
+                    width: 2px;
+                    background-color: #ff8a00;
+                    box-shadow: 2px 0 4px 0 rgba(255, 138, 0, 0.8)
                 }
             }
         }
