@@ -14,6 +14,13 @@
                 My Automation Analytics
             </div>
             <div>
+                <!-- TODO: Pending to make it functional -->
+                <div class="input-group custom-input">
+                    <span class="input-group-text"><i class="bi bi-calendar4"></i></span>
+                    <input type="text" class="form-control" placeholder="07/31/2023">
+                    <span class="input-group-text"><i class="bi bi-dash"></i></span>
+                    <input type="text" class="form-control" placeholder="08/30/2023">
+                </div>
             </div>
         </div>
         <div class="automation-analytic-section_cards">
@@ -182,7 +189,8 @@
                         <!-- Table Header - End -->
 
                         <!-- Table Data - Start -->
-                        <div class="item_data" *ngFor="let trigger of data?.x_rays_triggers"  [class.checked]="trigger.isChecked">
+                        <div class="item_data" *ngFor="let trigger of data?.x_rays_triggers"
+                            [class.checked]="trigger.isChecked">
                             <div class="me-2">
                                 <input class="form-check-input" type="checkbox" (change)="toggleChecked(trigger)">
                             </div>
