@@ -21,6 +21,8 @@ body {
 .form-check-input[type="checkbox"] {
     border-color: #dfe2e6;
     margin-top: 0.3em;
+    height: 16px;
+    width: 16px;
     &:checked {
         background-color: #0a0e1a;
         border-color: #0a0e1a;

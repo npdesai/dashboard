@@ -83,6 +83,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    padding: 8px;
                     .bi {
                         &::before {
                             display: flex;
@@ -181,6 +182,7 @@
                         margin-bottom: auto;
                     }
                     .bi {
+                        cursor: pointer;
                         &::before {
                             color: #78828e;
                         }
@@ -203,6 +205,7 @@
                         text-transform: capitalize;
                     }
                     .bi {
+                        cursor: pointer;
                         &::before {
                             color: #78828e;
                         }
@@ -223,6 +226,7 @@
                         color: #78828e;
                         font-size: 12px;
                         margin-bottom: 12px;
+                        cursor: pointer;
                     }
                     .item {
                         display: flex;
@@ -288,6 +292,7 @@
                         color: #78828e;
                         font-size: 12px;
                         margin-bottom: 12px;
+                        cursor: pointer;
                     }
                     .item {
                         border: 1px solid #f3f3f3;
@@ -349,6 +354,7 @@
                             }
                             &_more {
                                 .bi {
+                                    cursor: pointer;
                                     &::before {
                                         color: #78828e;
                                     }
@@ -378,6 +384,7 @@
                         color: #78828e;
                         font-size: 12px;
                         margin-bottom: 12px;
+                        cursor: pointer;
                     }
                     .item {
                         display: flex;
@@ -442,6 +449,7 @@
                                 }
                             }
                             .bi {
+                                cursor: pointer;
                                 &::before {
                                     height: 16px;
                                     width: 16px;
@@ -452,6 +460,7 @@
                             }
                             .edit-icon {
                                 color: #0080fc;
+                                cursor: pointer;
                             }
                             &.checked {
                                 box-shadow: 0 5px 10px rgba(10, 14, 26, 0.1);
@@ -506,6 +515,7 @@
                     background-color: #ffffff;
                     display: flex;
                     align-items: center;
+                    cursor: pointer;
                     .bi {
                         &::before {
                             height: 12px;
@@ -557,6 +567,11 @@
                             font-size: 11px;
                             padding: 4px 8px;
                             text-transform: capitalize;
+                            .bi {
+                                &::before {
+                                    vertical-align: middle !important;
+                                }
+                            }
                         }
                     }
                     &_description {
