@@ -70,3 +70,12 @@ body {
         display: none;
     }
 }
+
+/* Scrollable Div */
+
+.scrollable-container {
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
