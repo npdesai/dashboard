@@ -169,12 +169,12 @@
                     </div>
                 </div>
             </div>
-            <div class="sub-section_details_cards card">
+            <div class="sub-section_details_cards card px-0">
                 <!-- X-Ray Triggers - Start -->
                 <div class="triggers">
-                    <div class="d-flex align-items-center justify-content-between border-bottom">
-                        <div class="triggers_title">X-Ray Triggers</div>
-                        <div class="triggers_view-all">View All</div>
+                    <div class="d-flex align-items-center justify-content-between border-bottom triggers_header">
+                        <div class="triggers_header_title">X-Ray Triggers</div>
+                        <div class="triggers_header_view-all">View All</div>
                     </div>
                     <div class="item">
                         <!-- Table Header - Start -->
@@ -220,34 +220,38 @@
         </div>
         <!-- Unicorn Inbox - Start -->
         <div class="sub-section_unicorn">
-            <div class="sub-section_unicorn_main-title">
-                <div class="sub-section_unicorn_main-title_title">Unicorn Inbox</div>
-                <div class="sub-section_unicorn_main-title_all">
-                    <div class="dropdown">
-                        <div class="dropdown-toggle" id="filterDropdown" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            All
-                            <i class="bi bi-chevron-down"></i>
+            <div class="sub-section_unicorn_header">
+                <div class="sub-section_unicorn_main-title">
+                    <div class="sub-section_unicorn_main-title_title">Unicorn Inbox</div>
+                    <div class="sub-section_unicorn_main-title_all">
+                        <div class="dropdown">
+                            <div class="dropdown-toggle" id="filterDropdown" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                All
+                                <i class="bi bi-chevron-down"></i>
+                            </div>
+                            <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                                <li><a class="dropdown-item" href="#">Sort By</a></li>
+                            </ul>
                         </div>
-                        <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                            <li><a class="dropdown-item" href="#">Sort By</a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
-            <div class="sub-section_unicorn_actions">
-                <div>
-                    <input class="form-check-input me-2" type="checkbox" value="" id="selectAllCheck">
-                    <label class="form-check-label" for="selectAllCheck">
-                        Select all
-                    </label>
-                </div>
-                <div class="sub-section_unicorn_actions_list">
-                    <div class="sub-section_unicorn_actions_icon">
-                        <i class="bi bi-sliders2"></i>
+            <div class="sub-section_unicorn_subheader">
+                <div class="sub-section_unicorn_actions">
+                    <div>
+                        <input class="form-check-input me-2" type="checkbox" value="" id="selectAllCheck">
+                        <label class="form-check-label" for="selectAllCheck">
+                            Select all
+                        </label>
                     </div>
-                    <div class="sub-section_unicorn_actions_icon">
-                        <i class="bi bi-three-dots"></i>
+                    <div class="sub-section_unicorn_actions_list">
+                        <div class="sub-section_unicorn_actions_icon">
+                            <i class="bi bi-sliders2"></i>
+                        </div>
+                        <div class="sub-section_unicorn_actions_icon">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
                     </div>
                 </div>
             </div>
