@@ -1,5 +1,7 @@
 # Dashboard
 
+Welcome to the Dashboard project! This repository contains the code for a web-based dashboard application that provides various data visualizations and interactive features.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
 
 ## Development server
