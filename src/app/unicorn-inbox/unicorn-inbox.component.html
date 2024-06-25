@@ -1,0 +1,58 @@
+<div class="unicorn">
+    <div class="unicorn_header">
+        <div class="unicorn_main-title">
+            <div class="unicorn_main-title_title">Unicorn Inbox</div>
+            <div class="unicorn_main-title_all">
+                <div class="dropdown">
+                    <div class="dropdown-toggle" id="filterDropdown" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        All
+                        <i class="bi bi-chevron-down"></i>
+                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+                        <li><a class="dropdown-item" href="#">Sort By</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="unicorn_subheader">
+        <div class="unicorn_actions">
+            <div>
+                <input class="form-check-input me-2" type="checkbox" value="" id="selectAllCheck">
+                <label class="form-check-label" for="selectAllCheck">
+                    Select all
+                </label>
+            </div>
+            <div class="unicorn_actions_list">
+                <div class="unicorn_actions_icon">
+                    <i class="bi bi-sliders2"></i>
+                </div>
+                <div class="unicorn_actions_icon">
+                    <i class="bi bi-three-dots"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="unicorn_data">
+        <!-- Unicorn Inbox Items - Start -->
+        <div class="scrollable-container">
+            <div class="item" *ngFor="let item of inboxList">
+                <div class="item_title">
+                    <img src="assets/images/user.png" alt="User" class="item_title_image" />
+                    <div class="me-auto">
+                        <div class="item_title_name">{{item.name}}</div>
+                        <div class="item_title_status test-green">{{item.status}}</div>
+                    </div>
+                    <div class="item_title_tag">
+                        <i class="bi bi-inbox me-1"></i> {{item.type}}
+                    </div>
+                </div>
+                <div class="item_description">
+                    {{item.description}}
+                </div>
+            </div>
+        </div>
+        <!-- Unicorn Inbox Items - End -->
+    </div>
+</div>

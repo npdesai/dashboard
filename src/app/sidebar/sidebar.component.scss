@@ -18,6 +18,13 @@
             border: none;
             padding: 14px 16px;
             font-size: 14px;
+            &.active {
+                .bi {
+                    &::before {
+                        color: #ffffff;
+                    }
+                }
+            }
             &:not(.active) {
                 color: #6b788e;
                 .bi {

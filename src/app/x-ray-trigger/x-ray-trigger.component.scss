@@ -1,0 +1,110 @@
+.triggers {
+    width: 100%;
+    &_header {
+        margin-left: 24px;
+        margin-right: 24px;
+        &_title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0a0e1a;
+            margin-bottom: 12px;
+        }
+        &_view-all {
+            color: #78828e;
+            font-size: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+        }
+    }
+    .item {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+        &_header {
+            margin-top: 16px;
+            background-color: #f3f9ff;
+            border-radius: 8px;
+            padding: 12px 16px 12px 17px;
+            display: flex;
+            align-items: center;
+            height: 42px;
+            font-size: 12px;
+            color: #0a0e1a;
+            margin-left: 24px;
+            margin-right: 24px;
+            div {
+                &:nth-child(2) {
+                    width: 15%;
+                }
+                &:nth-child(3) {
+                    width: 10%;
+                }
+                &:nth-child(4) {
+                    width: 32%;
+                }
+                &:nth-child(5) {
+                    width: 35%;
+                }
+                &:last-child {
+                    width: 8%;
+                }
+            }
+            .form-check-input[type="checkbox"] {
+                border-color: #0a0e1a;
+            }
+        }
+        &_data {
+            border: 1px solid #f3f3f3;
+            border-radius: 8px;
+            padding: 12px 16px 12px 17px;
+            display: flex;
+            align-items: center;
+            height: 46px;
+            font-size: 12px;
+            color: #0a0e1a;
+            transition: box-shadow 0.3s ease-in-out;
+            div {
+                &:nth-child(2) {
+                    width: 15%;
+                }
+                &:nth-child(3) {
+                    width: 10%;
+                }
+                &:nth-child(4) {
+                    width: 32%;
+                }
+                &:nth-child(5) {
+                    width: 35%;
+                }
+                &:last-child {
+                    width: 8%;
+                }
+            }
+            .bi {
+                cursor: pointer;
+                &::before {
+                    height: 16px;
+                    width: 16px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+            .edit-icon {
+                color: #0080fc;
+                cursor: pointer;
+            }
+            &.checked {
+                box-shadow: 5px 10px 10px 0px rgba(10, 14, 26, 0.1);
+            }
+        }
+        .scrollable-container {
+            display: flex;
+            flex-direction: column;
+            row-gap: 12px;
+            height: 360px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+    }
+}

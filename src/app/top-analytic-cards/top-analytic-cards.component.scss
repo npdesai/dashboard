@@ -1,0 +1,134 @@
+.analytic-section {
+    &_cards {
+        display: flex;
+        flex-direction: row;
+        column-gap: 16px;
+
+        .analytic_card {
+            border-radius: 12px;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            padding: 16px;
+            row-gap: 10px;
+            width: 25%;
+            &_title {
+                font-size: 16px;
+                color: #78828e;
+                font-style: normal;
+            }
+            &_percentage {
+                font-size: 25px;
+                font-weight: bolder;
+                color: #0a0e1a;
+            }
+            &_icon {
+                height: 40px;
+                width: 40px;
+                border-radius: 4px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                .bi {
+                    &::before {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        height: 24px;
+                        width: 24px;
+                        font-weight: bolder !important;
+                    }
+                }
+            }
+            &_description {
+                color: #78828e;
+                font-size: 16px;
+            }
+        }
+        .blue {
+            background-color: #eaf5ff;
+            position: relative;
+            &_icon {
+                background-color: #dbeeff;
+                .bi {
+                    &::before {
+                        color: #0080fc;
+                    }
+                }
+            }
+            &_bar {
+                position: absolute;
+                top: 21px;
+                left: 0;
+                height: 46px;
+                width: 2px;
+                background-color: #0080fc;
+                box-shadow: 2px 0 4px 0 rgba(0, 128, 252, 0.8);
+            }
+        }
+        .purple {
+            background-color: #f3edff;
+            position: relative;
+            &_icon {
+                background-color: #e9deff;
+                .bi {
+                    &::before {
+                        color: #7339f5;
+                    }
+                }
+            }
+            &_bar {
+                position: absolute;
+                top: 21px;
+                left: 0;
+                height: 46px;
+                width: 2px;
+                background-color: #7339f5;
+                box-shadow: 2px 0 4px 0 rgba(115, 57, 245, 0.8);
+            }
+        }
+        .green {
+            background-color: #e8fff9;
+            position: relative;
+            &_icon {
+                background-color: #cefff2;
+                .bi {
+                    &::before {
+                        color: #009b72;
+                    }
+                }
+            }
+            &_bar {
+                position: absolute;
+                top: 21px;
+                left: 0;
+                height: 46px;
+                width: 2px;
+                background-color: #009b72;
+                box-shadow: 2px 0 4px 0 rgba(0, 155, 114, 0.8);
+            }
+        }
+        .orange {
+            background-color: #fff6ec;
+            position: relative;
+            &_icon {
+                background-color: #ffebd3;
+                .bi {
+                    &::before {
+                        color: #ff8a00;
+                    }
+                }
+            }
+            &_bar {
+                position: absolute;
+                left: 0;
+                top: 21px;
+                height: 46px;
+                width: 2px;
+                background-color: #ff8a00;
+                box-shadow: 2px 0 4px 0 rgba(255, 138, 0, 0.8);
+            }
+        }
+    }
+}

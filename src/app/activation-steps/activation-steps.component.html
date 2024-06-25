@@ -1,0 +1,18 @@
+<div class="activation-steps">
+    <div class="d-flex align-items-center justify-content-between border-bottom">
+        <div class="activation-steps_title">Activation Steps</div>
+        <div class="activation-steps_view-all">View All</div>
+    </div>
+    <div class="scrollable-container">
+        <div class="item" *ngFor="let step of activationSteps">
+            <div class="item_icon">
+                <i [ngClass]="step.icon"></i>
+            </div>
+            <div class="item_detail">
+                <div class="item_detail_title">{{step.step_title}}</div>
+                <div class="item_detail_description">{{step.description}}</div>
+            </div>
+            <div class="item_time">{{ formatDate(step.datetime) }}</div>
+        </div>
+    </div>
+</div>

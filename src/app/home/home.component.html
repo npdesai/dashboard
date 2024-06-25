@@ -23,61 +23,14 @@
                 </div>
             </div>
         </div>
-        <div class="automation-analytic-section_cards">
-            <div class="analytic_card blue">
-                <div class="blue_bar"></div>
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="w-100">
-                        <div class="analytic_card_title">All Time</div>
-                        <div class="analytic_card_percentage" *ngIf="!loading">{{data?.top_analytics_cards?.all_time}}%
-                        </div>
-                    </div>
-                    <div class="analytic_card_icon blue_icon"><i class="bi bi-clipboard-pulse"></i></div>
-                </div>
-                <div class="analytic_card_description">X-Ray Leads Captured</div>
-            </div>
-            <div class="analytic_card purple">
-                <div class="purple_bar"></div>
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="w-100">
-                        <div class="analytic_card_title">Sent Emails</div>
-                        <div class="analytic_card_percentage" *ngIf="!loading">
-                            {{data?.top_analytics_cards?.send_emails}}%</div>
-                    </div>
-                    <div class="analytic_card_icon purple_icon"><i class="bi bi-envelope-check"></i></div>
-                </div>
-                <div class="analytic_card_description">X-Ray Leads Captured</div>
-            </div>
-            <div class="analytic_card green">
-                <div class="green_bar"></div>
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="w-100">
-                        <div class="analytic_card_title">Open Rate</div>
-                        <div class="analytic_card_percentage" *ngIf="!loading">{{data?.top_analytics_cards?.open_rate}}%
-                        </div>
-                    </div>
-                    <div class="analytic_card_icon green_icon"><i class="bi bi-archive"></i></div>
-                </div>
-                <div class="analytic_card_description">X-Ray Leads Captured</div>
-            </div>
-            <div class="analytic_card orange">
-                <div class="orange_bar"></div>
-                <div class="d-flex align-items-center justify-content-between w-100">
-                    <div class="w-100">
-                        <div class="analytic_card_title">Click Rate</div>
-                        <div class="analytic_card_percentage" *ngIf="!loading">
-                            {{data?.top_analytics_cards?.click_rate}}%</div>
-                    </div>
-                    <div class="analytic_card_icon orange_icon"><i class="bi bi-mouse3"></i></div>
-                </div>
-                <div class="analytic_card_description">X-Ray Leads Captured</div>
-            </div>
-        </div>
+         <!-- Top Analytic Cards - Start -->
+            <app-top-analytic-cards [topAnalyticsCards]="data?.top_analytics_cards"></app-top-analytic-cards>
+        <!-- Top Analytic Cards - End -->
     </div>
     <!-- My Automation Analytics - End -->
     <div class="sub-section">
         <div class="sub-section_details">
-            <div class="sub-section_details_cards">
+            <div class="sub-section_details_cards view-row">
                 <div class="card email-outreach">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="email-outreach_title">Connect Email Outreach</div>
@@ -96,29 +49,12 @@
                     <button type="button" class="btn btn-outline-primary">Create Automation</button>
                 </div>
             </div>
-            <div class="sub-section_details_cards card">
+            <div class="sub-section_details_cards card view-row">
                 <!-- Activation Steps - Start  -->
-                <div class="activation-steps">
-                    <div class="d-flex align-items-center justify-content-between border-bottom">
-                        <div class="activation-steps_title">Activation Steps</div>
-                        <div class="activation-steps_view-all">View All</div>
-                    </div>
-                    <div class="scrollable-container">
-                        <div class="item" *ngFor="let step of data?.activation_steps">
-                            <div class="item_icon">
-                                <i [ngClass]="step.icon"></i>
-                            </div>
-                            <div class="item_detail">
-                                <div class="item_detail_title">{{step.step_title}}</div>
-                                <div class="item_detail_description">{{step.description}}</div>
-                            </div>
-                            <div class="item_time">{{ formatDate(step.datetime) }}</div>
-                        </div>
-                    </div>
-                </div>
+                <app-activation-steps class="w-100" *ngIf="data?.activation_steps" [activationSteps]="data?.activation_steps"></app-activation-steps>
                 <!-- Activation Steps - End  -->
                 <div class="vr"></div>
-                <div class="email-automation">
+                <div class="email-automation w-100">
                     <div class="d-flex align-items-center justify-content-between border-bottom">
                         <div class="email-automation_title">Email Automation</div>
                         <div class="email-automation_view-all">View All</div>
@@ -171,112 +107,12 @@
             </div>
             <div class="sub-section_details_cards card px-0">
                 <!-- X-Ray Triggers - Start -->
-                <div class="triggers">
-                    <div class="d-flex align-items-center justify-content-between border-bottom triggers_header">
-                        <div class="triggers_header_title">X-Ray Triggers</div>
-                        <div class="triggers_header_view-all">View All</div>
-                    </div>
-                    <div class="item">
-                        <!-- Table Header - Start -->
-                        <div class="item_header">
-                            <div class="me-2">
-                                <input class="form-check-input" type="checkbox" value="">
-                            </div>
-                            <div class="me-auto text-left">Name</div>
-                            <div class="me-auto text-left">X-Ray Status</div>
-                            <div class="me-auto text-center">Capture leads from</div>
-                            <div class="me-auto text-left">Audience name</div>
-                            <div class="text-center">Actions</div>
-                        </div>
-                        <!-- Table Header - End -->
-
-                        <!-- Table Data - Start -->
-                        <div class="scrollable-container">
-                            <div class="item_data" *ngFor="let trigger of data?.x_rays_triggers"
-                                [class.checked]="trigger.isChecked">
-                                <div class="me-2">
-                                    <input class="form-check-input" type="checkbox" (change)="toggleChecked(trigger)">
-                                </div>
-                                <div class="me-auto text-left">{{trigger.name}}</div>
-                                <div class="me-auto text-left">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" role="switch"
-                                            [checked]="trigger.status === 'on'">
-                                    </div>
-                                </div>
-                                <div class="me-auto text-center">{{trigger.leads_from}}</div>
-                                <div class="me-auto text-left text-truncate">{{trigger.audience_name}}</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <div class="me-2"><i class="bi bi-pencil-square edit-icon"></i></div>
-                                    <div><i class="bi bi-three-dots-vertical"></i></div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Table Data - End -->
-                    </div>
-                </div>
+                <app-x-ray-trigger *ngIf="data?.x_rays_triggers" [triggers]="data?.x_rays_triggers"></app-x-ray-trigger>
                 <!-- X-Ray Triggers - End -->
             </div>
         </div>
         <!-- Unicorn Inbox - Start -->
-        <div class="sub-section_unicorn">
-            <div class="sub-section_unicorn_header">
-                <div class="sub-section_unicorn_main-title">
-                    <div class="sub-section_unicorn_main-title_title">Unicorn Inbox</div>
-                    <div class="sub-section_unicorn_main-title_all">
-                        <div class="dropdown">
-                            <div class="dropdown-toggle" id="filterDropdown" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                All
-                                <i class="bi bi-chevron-down"></i>
-                            </div>
-                            <ul class="dropdown-menu" aria-labelledby="filterDropdown">
-                                <li><a class="dropdown-item" href="#">Sort By</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sub-section_unicorn_subheader">
-                <div class="sub-section_unicorn_actions">
-                    <div>
-                        <input class="form-check-input me-2" type="checkbox" value="" id="selectAllCheck">
-                        <label class="form-check-label" for="selectAllCheck">
-                            Select all
-                        </label>
-                    </div>
-                    <div class="sub-section_unicorn_actions_list">
-                        <div class="sub-section_unicorn_actions_icon">
-                            <i class="bi bi-sliders2"></i>
-                        </div>
-                        <div class="sub-section_unicorn_actions_icon">
-                            <i class="bi bi-three-dots"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="sub-section_unicorn_data">
-                <!-- Unicorn Inbox Items - Start -->
-                <div class="scrollable-container">
-                    <div class="item" *ngFor="let item of data?.inbox_list">
-                        <div class="item_title">
-                            <img src="assets/images/user.png" alt="User" class="item_title_image" />
-                            <div class="me-auto">
-                                <div class="item_title_name">{{item.name}}</div>
-                                <div class="item_title_status test-green">{{item.status}}</div>
-                            </div>
-                            <div class="item_title_tag">
-                                <i class="bi bi-inbox me-1"></i> {{item.type}}
-                            </div>
-                        </div>
-                        <div class="item_description">
-                            {{item.description}}
-                        </div>
-                    </div>
-                </div>
-                <!-- Unicorn Inbox Items - End -->
-            </div>
-        </div>
+        <app-unicorn-inbox class="sub-section_unicorn" *ngIf="data?.inbox_list" [inboxList]="data?.inbox_list"></app-unicorn-inbox>
         <!-- Unicorn Inbox - End -->
     </div>
 </div>
