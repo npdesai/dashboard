@@ -23,8 +23,8 @@
                 </div>
             </div>
         </div>
-         <!-- Top Analytic Cards - Start -->
-            <app-top-analytic-cards [topAnalyticsCards]="data?.top_analytics_cards"></app-top-analytic-cards>
+        <!-- Top Analytic Cards - Start -->
+        <app-top-analytic-cards [topAnalyticsCards]="top_analytics_cards"></app-top-analytic-cards>
         <!-- Top Analytic Cards - End -->
     </div>
     <!-- My Automation Analytics - End -->
@@ -51,7 +51,15 @@
             </div>
             <div class="sub-section_details_cards card view-row">
                 <!-- Activation Steps - Start  -->
-                <app-activation-steps class="w-100" *ngIf="data?.activation_steps" [activationSteps]="data?.activation_steps"></app-activation-steps>
+                <ng-container *ngIf="(loading$ | async); else activationStepsContent">
+                    <div class="loader w-100"><i class="fas fa-spinner fa-spin"></i></div>
+                </ng-container>
+                <ng-template #activationStepsContent>
+                    <div *ngIf="error$ | async as error">Error: {{ error }}</div>
+                    <app-activation-steps class="w-100" *ngIf="activation_steps" [activationSteps]="activation_steps">
+                    </app-activation-steps>
+                </ng-template>
+                <!-- <app-activation-steps class="w-100" *ngIf="activation_steps" [activationSteps]="activation_steps"></app-activation-steps> -->
                 <!-- Activation Steps - End  -->
                 <div class="vr"></div>
                 <div class="email-automation w-100">
@@ -107,12 +115,26 @@
             </div>
             <div class="sub-section_details_cards card px-0">
                 <!-- X-Ray Triggers - Start -->
-                <app-x-ray-trigger *ngIf="data?.x_rays_triggers" [triggers]="data?.x_rays_triggers"></app-x-ray-trigger>
+                <ng-container *ngIf="(loading$ | async); else xRayTriggerContent">
+                    <div class="loader"><i class="fas fa-spinner fa-spin"></i></div>
+                </ng-container>
+                <ng-template #xRayTriggerContent>
+                    <div *ngIf="error$ | async as error">Error: {{ error }}</div>
+                    <app-x-ray-trigger *ngIf="x_rays_triggers" [triggers]="x_rays_triggers"></app-x-ray-trigger>
+                </ng-template>
+                <!-- <app-x-ray-trigger *ngIf="x_rays_triggers" [triggers]="x_rays_triggers"></app-x-ray-trigger> -->
                 <!-- X-Ray Triggers - End -->
             </div>
         </div>
         <!-- Unicorn Inbox - Start -->
-        <app-unicorn-inbox class="sub-section_unicorn" *ngIf="data?.inbox_list" [inboxList]="data?.inbox_list"></app-unicorn-inbox>
+        <ng-container *ngIf="(loading$ | async); else unicornInboxContent">
+            <div class="loader"><i class="fas fa-spinner fa-spin"></i></div>
+        </ng-container>
+        <ng-template #unicornInboxContent>
+            <div *ngIf="error$ | async as error">Error: {{ error }}</div>
+            <app-unicorn-inbox class="sub-section_unicorn" *ngIf="inbox_list" [inboxList]="inbox_list"></app-unicorn-inbox>
+        </ng-template>
+        <!-- <app-unicorn-inbox class="sub-section_unicorn" *ngIf="inbox_list" [inboxList]="inbox_list"></app-unicorn-inbox> -->
         <!-- Unicorn Inbox - End -->
     </div>
 </div>
